@@ -58,7 +58,7 @@ class TrianglesSpondSink(
       matches.partition { it.id.contains("friendly", ignoreCase = true) }
     val triangles =
       leagueMatches
-        .groupBy { TriangleId(it.id.dropLast(1)) }
+        .groupBy { TriangleId(it.id.take(4)) }
         .mapNotNull { buildTriangle(it.key, it.value, friendlyMatches) }
         .toSet()
     log.d("Built ${triangles.size} triangles.")

@@ -99,7 +99,7 @@ class BvaDataSource(
         friendly -> 3
         id.endsWith('a') -> 1
         id.endsWith('b') -> 2
-        id.endsWith('c') -> 3
+        id.endsWith('f', ignoreCase = true) || id.endsWith('c') -> 3
         else -> {
           log.e(
             "[$sourceId][$id] Cannot determine match order: date=$date, time=$time," +
